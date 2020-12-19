@@ -12,10 +12,6 @@ class Food
 
     getFoodStock()
     {
-        var foodCountRef=database.ref('Food');
-        foodCountRef.on("value",function(data){
-            foodStock=data.val();})
-            console.log(this.foodStock);
             return this.foodStock;
     }
 
@@ -42,7 +38,7 @@ class Food
         var x=80,y=100;
 
         imageMode(CENTER);
-        image(this.image,x,y,50,50);
+        image(this.image,100,100,50,50);
 
         if(this.foodStock!=0)
         {

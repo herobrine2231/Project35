@@ -8,7 +8,7 @@ var dog, happyDog,database,foodS,foodStock;
 var dogImage1, dogImage2,dogImage3,dogImage4;
 var dogSprite;
 
-var feedPet, addFoods, fedTime,lastFed;
+var feedPet, addFood, fedTime,lastFed;
 var foodObj;
 
 function preload()
@@ -26,7 +26,7 @@ function setup() {
 
   createCanvas(500,500);
   
-  dogSprite=createSprite(width/2,80,10,10);
+  dogSprite=createSprite(width/2+100,200,10,10);
   dogSprite.addImage(dogImage1);
   dogSprite.scale=0.2;
 
