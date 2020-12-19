@@ -36,12 +36,12 @@ function setup() {
   foodObj= new Food();
 
   feedPet= createButton("Feed the dog");
-  feedPet.position(700,95);
+  feedPet.position(650,95);
   feedPet.mousePressed(feedDog);
   
-  addFoods=createButton("Add Food");
-  addFoods.position(800,95);
-  addFoods.mousePressed(addFood);
+  addFood=createButton("Add Food");
+  addFood.position(750,95);
+  addFood.mousePressed(addFoods);
 }
 
 
@@ -59,31 +59,35 @@ function draw() {
   drawSprites();
   //add styles here
 
-  textSize(20);
-  fill("white");
-  stroke(10);
-  text("Food Stock:" +foodStock, 20,30);
+  
 
   fedTime= database.ref('FeedTime');
   fedTime.on("value", function(data)
   {
     lastFed=data.val();
-  })
+  });
 
   fill(255,255,254);
   textSize(15);
+  console.log(lastFed);
+  console.log(foodStock);
   if(lastFed>=12)
   {
-    text("Last Feed: "+ lastFed%12 + "PM", 350,30)
+    text("Last Feed: "+ lastFed%12 + "PM", 300,30)
   }
   else if(lastFed==0)
   {
-    text("Last Feed: 12 AM", 350,30);
+    text("Last Feed: 12 AM", 300,30);
   }
   else
   {
-    text("Last Feed: " +lastFed +"AM", 350,30);
+    text("Last Feed: " +lastFed +"AM", 300,30);
   }
+
+  textSize(15);
+  fill("white");
+  stroke(10);
+  text("Food Stock:" +foodStock, 20,30);
 }
 
 function feedDog()
@@ -99,7 +103,7 @@ function feedDog()
   )
 }
 
-function addFood()
+function addFoods()
 {
   foodS++;
   database.ref('/').update(
