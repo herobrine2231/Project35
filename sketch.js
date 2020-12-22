@@ -61,7 +61,7 @@ function draw() {
 
   
 
-  fedTime= database.ref('FeedTime');
+  fedTime=database.ref('FeedTime');
   fedTime.on("value", function(data)
   {
     lastFed=data.val();
@@ -128,5 +128,11 @@ function addFoods()
   }
   database.ref('/').update({Food:x})
 }*/
+
+function readStock(data)
+{
+  foodStock=data.val();
+  foodObj.updateFoodStock(food);
+}
 
 
