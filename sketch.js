@@ -8,7 +8,7 @@ var dog, happyDog,database,foodS,foodStock;
 var dogImage1, dogImage2,dogImage3,dogImage4;
 var dogSprite;
 
-var feedPet, addFood, fedTime,lastFed=0;
+var feedPet, addFood, fedTime,lastFed;
 var foodObj;
 
 function preload()
