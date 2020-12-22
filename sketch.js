@@ -93,7 +93,7 @@ function draw() {
 
 function feedDog()
 {
-  dog.addImage(dogImage4);
+  dogSprite.addImage(dogImage4);
 
   foodObj.updateFoodStock(foodObj.getFoodStock()-1);
   database.ref('/').update(
@@ -105,10 +105,10 @@ function feedDog()
 
 function addFoods()
 {
-  foodS++;
+  foodStock++;
   database.ref('/').update(
     {
-      Food:foodS
+      Food:foodStock
     }
   )
 }
@@ -131,8 +131,8 @@ function addFoods()
 
 function readStock(data)
 {
-  foodS=data.val();
-  foodObj.updateFoodStock(food);
+  foodStock=data.val();
+  foodObj.updateFoodStock(foodStock);
 }
 
 
