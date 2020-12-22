@@ -8,7 +8,7 @@ var dog, happyDog,database,foodS,foodStock;
 var dogImage1, dogImage2,dogImage3,dogImage4;
 var dogSprite;
 
-var feedPet, addFood, fedTime,lastFed;
+var feedPet, addFood, fedTime,lastFed=0;
 var foodObj;
 
 function preload()
@@ -56,7 +56,7 @@ function draw() {
     dogSprite.addImage(dogImage4);
   }*/
 
-  drawSprites();
+
   //add styles here
 
   
@@ -88,6 +88,7 @@ function draw() {
   fill("white");
   stroke(10);
   text("Food Stock:" +foodStock, 20,30);
+  drawSprites();
 }
 
 function feedDog()
@@ -99,8 +100,7 @@ function feedDog()
     {
       Food:foodObj.getFoodStock(),
       FeedTime:hour()
-    }
-  )
+    })
 }
 
 function addFoods()
