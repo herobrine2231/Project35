@@ -131,7 +131,7 @@ function addFoods()
 
 function readStock(data)
 {
-  foodStock=data.val();
+  foodS=data.val();
   foodObj.updateFoodStock(food);
 }
 
