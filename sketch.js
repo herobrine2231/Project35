@@ -30,8 +30,8 @@ function setup() {
   dogSprite.addImage(dogImage1);
   dogSprite.scale=0.2;
 
- // foodStock=database.ref('Food');
-  //foodStock.on("value", readStock);
+  foodStock=database.ref('Food');
+  foodStock.on("value", readStock);
 
   foodObj= new Food();
 

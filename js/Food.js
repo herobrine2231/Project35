@@ -17,7 +17,7 @@ class Food
 
     updateFoodStock(foodStock)
     {
-       this.FoodStock=foodStock;
+       this.foodStock=foodStock;
     }
 
     deductFoodStock()
